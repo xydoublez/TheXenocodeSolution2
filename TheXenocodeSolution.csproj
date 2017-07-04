@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B055D5B5-0BCA-4EF5-BFCE-AD28B530E97F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>TheXenocodeSolution</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="MainFrm\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm\FileStream.cs" />
+    <Compile Include="ZIP\GZip.cs" />
+    <Compile Include="ZIP\GZipStream.cs" />
+    <Compile Include="ZIP\GZipBase.cs" />
+    <Compile Include="ZIP\GZipTrans.cs" />
+    <Compile Include="AboutFrm\StrongName.cs" />
+    <Compile Include="AboutFrm\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutFrm\GZipBuf.cs" />
+    <Compile Include="AboutFrm\GZipLib.cs" />
+    <Compile Include="MainMoudle\GBufBitBase.cs" />
+    <Compile Include="MainMoudle\MainMoudle.cs" />
+    <Compile Include="MainMoudle\Process.cs" />
+    <Compile Include="MainMoudle\GBufBase.cs" />
+    <Compile Include="PE\DosHdr.cs" />
+    <Compile Include="PE\DataDir.cs" />
+    <Compile Include="PE\OptionalHdr.cs" />
+    <Compile Include="PE\FileHdr.cs" />
+    <Compile Include="PESECTION\Section.cs" />
+    <Compile Include="PESECTION\PeHdr.cs" />
+    <Compile Include="PESECTION\GXtbl.cs" />
+    <Compile Include="PESECTION\PeStruct.cs" />
+    <Compile Include="ICSharpCode\SharpZipLib\SharpZipBaseException.cs" />
+    <Compile Include="ICSharpCode\SharpZipLib\Zip\ZipException.cs" />
+    <EmbeddedResource Include="MainFrm\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutFrm\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheXenocodeSolution.Properties.Resources.resources" />
+  </ItemGroup>
+</Project>
